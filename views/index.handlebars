@@ -1,0 +1,28 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-6">
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                    {{> burgers/undevouredBurgers }}
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class = "col-6">
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    {{> burgers/devouredBurgers}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class = "container">
+    <form>
+        <div class="form-group">
+            <label for="burgerDescInput">New Burger</label>
+            <textarea class="form-control" id="burgerDescInput" rows="5"></textarea>
+        </div>
+        <button class = "btn btn-primary" id = "submit">Create Burger</button>
+    </form>  
+    
+</div>
